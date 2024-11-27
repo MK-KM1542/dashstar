@@ -5,7 +5,7 @@ import ShowArticlePage from "@/pages/ShowArticlePage.tsx";
 
 const routes: RouteObject[] = [
     {
-        // 根路由是 layout 保证布局永远被用到.
+       
         path: "/",
         lazy: async () => {
             const Layout = await import("@/layouts");

@@ -9,7 +9,7 @@ const MarkdownRenderer = ({ markdown }: { markdown: any}) => {
     return (
         <Paper sx={{ p: 2 }}>
             <ReactMarkdown
-                // 启用 GitHub 风格的 Markdown 支持
+               
                 remarkPlugins={[remarkGfm]}
                 components={{
                     h1: ({ children }) => (

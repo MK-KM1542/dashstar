@@ -3,7 +3,7 @@ package dev.e23.dashstar.handler;
 import jakarta.ws.rs.GET;
 import jakarta.ws.rs.Path;
 
-@Path("/")  // /api
+@Path("/") 
 public class IndexHandler {
 
     @GET

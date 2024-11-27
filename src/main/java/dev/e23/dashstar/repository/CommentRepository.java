@@ -9,24 +9,24 @@ import jakarta.persistence.Query;
 
 import java.util.List;
 
-@ApplicationScoped  // 声明这是一个应用范围的 Bean，需要的地方可以使用 @Inject 注入
+@ApplicationScoped 
 public class CommentRepository {
 
     public List<Comment> findByArticleId(Integer id) throws PersistenceException {
         EntityManager em = HibernateUtil.getEntityManager();
         List<Comment> comments = null;
         try {
-            em.getTransaction().begin();  // 开始事务
+            em.getTransaction().begin(); 
             comments = em
                     .createQuery("SELECT c FROM Comment c WHERE c.articleId = :articleId", Comment.class)
                     .setParameter("articleId", id)
-                    .getResultList();  // 查询指定文章的评论
-            em.getTransaction().commit();  // 提交事务
+                    .getResultList(); 
+            em.getTransaction().commit(); 
         } catch (PersistenceException e) {
-            em.getTransaction().rollback();  // 当出了异常时回滚事务
+            em.getTransaction().rollback(); 
             throw new RuntimeException("", e);
         } finally {
-            em.close();  // 关闭 EntityManager
+            em.close(); 
         }
         return comments;
     }
@@ -34,7 +34,7 @@ public class CommentRepository {
     public void delete(Comment comment) throws PersistenceException {
         EntityManager em = HibernateUtil.getEntityManager();
         try {
-            em.getTransaction().begin();  // 开始事务
+            em.getTransaction().begin(); 
             em.remove(em.contains(comment) ? comment : em.merge(comment));
             em.getTransaction().commit();
 
@@ -49,14 +49,14 @@ public class CommentRepository {
     public void create(Comment comment) throws PersistenceException {
         EntityManager em = HibernateUtil.getEntityManager();
         try {
-            em.getTransaction().begin();  // 开始事务
-            em.persist(comment);  // 保存评论
-            em.getTransaction().commit();  // 提交事务
+            em.getTransaction().begin(); 
+            em.persist(comment); 
+            em.getTransaction().commit(); 
         } catch (PersistenceException e) {
-            em.getTransaction().rollback();  // 当出了异常时回滚事务
+            em.getTransaction().rollback(); 
             throw new RuntimeException("", e);
         } finally {
-            em.close();  // 关闭 EntityManager
+            em.close(); 
         }
     }
 

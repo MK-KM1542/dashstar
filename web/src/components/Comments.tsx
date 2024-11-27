@@ -21,7 +21,7 @@ function MyComment({ comment, firstName, created_at, commentId, fetchComments, }
                 fetchComments();
             })
             .catch((error) => {
-                // 请求失败后的处理逻辑
+               
                 console.error("删除评论失败:", error);
             });
     }

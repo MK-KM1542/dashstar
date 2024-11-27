@@ -33,7 +33,7 @@ export default function NavigationBar() {
             <AppBar
                 position="sticky"
                 sx={{
-                    backgroundColor: isDarkMode ? "#333" : "#1976d2", // 适配明暗模式
+                    backgroundColor: isDarkMode ? "#333" : "#1976d2",
                     boxShadow: "none",
                     borderBottom: isDarkMode ? "2px solid #555" : "2px solid #1565c0",
                 }}

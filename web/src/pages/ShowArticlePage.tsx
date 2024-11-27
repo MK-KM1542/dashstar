@@ -31,7 +31,7 @@ export default function ShowArticlePage() {
             maxWidth="lg"
             sx={{
                 py: 4,
-                px: { xs: 2, md: 4 }, // 响应式内边距
+                px: { xs: 2, md: 4 },
                 minHeight: "100vh",
                 display: "flex",
                 flexDirection: "column",
@@ -134,7 +134,7 @@ export default function ShowArticlePage() {
                         }}>
                             <Box sx={{
                                 flex: 1,
-                                maxHeight: "800px",  // 设置最大高度
+                                maxHeight: "800px", 
                                 overflowY: "auto",
                                 "&::-webkit-scrollbar": {
                                     width: "8px",
